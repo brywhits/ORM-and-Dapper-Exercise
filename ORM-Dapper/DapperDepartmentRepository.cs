@@ -5,6 +5,7 @@ namespace ORM_Dapper;
 
 public class DapperDepartmentRepository : IDepartmentRepository
 {
+    //private field with underscore to designate it's private
     private readonly IDbConnection _connection;
 
     // Constructor
