@@ -28,7 +28,7 @@ namespace ORM_Dapper
 
             foreach (var dept in departments)
             {
-                Console.WriteLine($"{dept.DepartmentID}, {dept.Name}.");
+                Console.WriteLine($"{dept.DepartmentID}| {dept.Name}.");
             }
 
             Console.WriteLine("Connection object created successfully!");
