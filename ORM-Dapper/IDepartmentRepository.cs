@@ -1,9 +1,9 @@
 namespace ORM_Dapper;
 
-public interface IDepartmentRepository
+public interface IDepartmentRepository // template for behavior; contract
 {
     //Stubbed out method for Interface
-    public IEnumerable<Department> GetAllDepartments();
+    IEnumerable<Department> GetAllDepartments();
     
-    public void InsertDepartment(string newDepartmentName);
+    void InsertDepartment(string newDepartmentName);
 }

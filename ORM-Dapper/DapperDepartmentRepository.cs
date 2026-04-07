@@ -5,7 +5,9 @@ namespace ORM_Dapper;
 
 public class DapperDepartmentRepository : IDepartmentRepository
 {
-    //private field with underscore to designate it's private
+    //Private field with underscore to designate that it's private
+    //Benefit of readonly is that you can't inadvertently change it from another part of the DeptRepo after it's initialized 
+    //Otherwise, we cac only give _connection a value at the time of instantiation of DeptRepo
     private readonly IDbConnection _connection;
 
     // Constructor

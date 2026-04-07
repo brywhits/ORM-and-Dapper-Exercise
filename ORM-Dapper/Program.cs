@@ -20,9 +20,18 @@ namespace ORM_Dapper
             string connString = config.GetConnectionString("DefaultConnection")!;
 
             //Creates a MySQL database connection object
-            using IDbConnection conn = new MySqlConnection(connString);
+            IDbConnection conn = new MySqlConnection(connString);
 
-            Console.WriteLine("Connection object created successfully!"); //OmniSharp: Restart OmniSharpX
+            var repo = new DapperDepartmentRepository(conn);
+            
+            var departments = repo.GetAllDepartments();
+
+            foreach (var dept in departments)
+            {
+                Console.WriteLine($"{dept.DepartmentID}, {dept.Name}.");
+            }
+
+            Console.WriteLine("Connection object created successfully!");
         }
     }
 }
