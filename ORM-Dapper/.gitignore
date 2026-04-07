@@ -8,7 +8,8 @@
 *.user
 *.userosscache
 *.sln.docstates
-appsettings.json
+#ignore appsettings since it contains psswrd info for dB connection; won't be tracked or sent to GitHub
+*appsettings.json 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
