@@ -1,6 +1,7 @@
 ﻿using System.Data;
-using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
+using Microsoft.Extensions.Configuration;
+
 
 namespace ORM_Dapper
 {
@@ -19,7 +20,6 @@ namespace ORM_Dapper
             string connString = config.GetConnectionString("DefaultConnection")!;
 
             //Creates a MySQL database connection object
-            //Using → ensures that the connection is closed and disposed automatically when done
             using IDbConnection conn = new MySqlConnection(connString);
 
             Console.WriteLine("Connection object created successfully!"); //OmniSharp: Restart OmniSharpX
