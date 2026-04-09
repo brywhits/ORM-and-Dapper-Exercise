@@ -2,7 +2,7 @@ namespace ORM_Dapper;
 
 public class Product
 {
-    // add each column from our dB product table as properties
+    // add each column from dB product table as properties
     public int ProductId { get; set; } // get;set = read;write
     public string Name { get; set; }
     public double Price { get; set; }

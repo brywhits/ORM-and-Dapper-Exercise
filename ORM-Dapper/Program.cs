@@ -20,18 +20,31 @@ namespace ORM_Dapper
             string connString = config.GetConnectionString("DefaultConnection")!;
 
             //Creates a MySQL database connection object
-            IDbConnection conn = new MySqlConnection(connString);
-
-            var repo = new DapperDepartmentRepository(conn);
+            IDbConnection connection = new MySqlConnection(connString);
             
+            var repo  = new DapperProductRepo(connection);
+            
+            repo.CreateProduct("newStuff", 20, 1);
+            
+            var products = repo.GetAllProducts();
+            
+            foreach (var prod in products)
+            {
+                Console.WriteLine($"ProductID: {prod.ProductId} | {prod.Name}.");
+            }
+
+            Console.WriteLine("Connection object created successfully!");
+
+            /*var repo = new DapperDepartmentRepository(connection);
+
             var departments = repo.GetAllDepartments();
 
             foreach (var dept in departments)
             {
-                Console.WriteLine($"{dept.DepartmentID}| {dept.Name}.");
+                Console.WriteLine($"{dept.DepartmentID} | {dept.Name}.");
             }
 
-            Console.WriteLine("Connection object created successfully!");
+            Console.WriteLine("Connection object created successfully!");*/
         }
     }
 }
