@@ -18,7 +18,6 @@ public class DapperProductRepo  : IProductRepo
     {
         _connection.Execute("INSERT INTO products (Name, Price, CategoryID) VALUES (@name, @price, @categoryID);",
             new { name = name, price = price, categoryID = categoryID });
-        
     }
     
     public IEnumerable<Product> GetAllProducts()

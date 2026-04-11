@@ -5,6 +5,7 @@ namespace ORM_Dapper;
 
 public class DapperDepartmentRepository : IDepartmentRepository
 {
+    //It is a variable declared directly inside a class, but outside any method or constructor
     //Private field with underscore to designate that it's private
     //Benefit of readonly is that you can't inadvertently change it from another part of the DeptRepo after it's initialized 
     //Otherwise, we cac only give _connection a value at the time of instantiation of DeptRepo
